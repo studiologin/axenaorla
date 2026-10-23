@@ -1,0 +1,4 @@
+import { oportunidades as o } from '@/content/oportunidades';
+import { Arrow } from '../ui/Arrow';
+import { StatusBadge } from '../ui/StatusBadge';
+export function Parcerias() { return <section className="section partnerships" id="parcerias" aria-labelledby="parcerias-title"><div className="container"><div className="partner-heading"><div><span className="eyebrow">{o.indice}</span><h2 id="parcerias-title">{o.titulo}<br /><em>{o.destaque}</em></h2></div><p>{o.descricao}</p></div><div className="business-model" id="modelo"><h3>{o.modeloTitulo}</h3><p>{o.modelo}</p><StatusBadge item={o} always /></div><div className="opportunities">{o.frentes.map((f, i) => <article key={f.titulo}><span>0{i + 1}</span><h3>{f.titulo}</h3><p>{f.descricao}</p><StatusBadge item={f} /></article>)}</div><div className="partner-bottom"><div><p>{o.nota}</p><p>{o.proximo}</p></div><a className="button button-yellow" href="#contato">{o.cta}<Arrow diagonal /></a></div></div></section>; }

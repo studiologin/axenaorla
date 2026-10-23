@@ -1,0 +1,3 @@
+import { faq } from '@/content/faq';
+import { StatusBadge } from '../ui/StatusBadge';
+export function Faq() { if (!faq.itens.length) return null; return <section className="section container faq" id="perguntas" aria-labelledby="faq-title"><div><span className="eyebrow">{faq.indice}</span><h2 id="faq-title">{faq.titulo}</h2></div><div>{faq.itens.map((f, i) => <details key={f.titulo}><summary><span className="faq-index">0{i + 1}</span><h3>{f.titulo}</h3><span className="faq-plus" aria-hidden="true">+</span></summary><div className="faq-answer"><p>{f.descricao}</p><StatusBadge item={f} /></div></details>)}</div></section>; }
